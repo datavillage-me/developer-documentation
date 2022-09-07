@@ -2,7 +2,7 @@
 layout: default
 title: Deploy
 nav_order: 5
-parent: Application Settings
+parent: Console
 ---
 
 # Deploy

@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Application Settings
+title: Console
 nav_order: 2
 has_children: true
-permalink: docs/applicationsettings
+permalink: docs/console
 ---
 
 # Application settings

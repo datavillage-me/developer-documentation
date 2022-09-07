@@ -1,79 +1,28 @@
 ---
 layout: default
-title: Home
+title: Introduction
 nav_order: 1
-description: "Datavillage developer documentation"
+description: "Datavillage Developer Documentation"
 permalink: /
 ---
 
-# Datavillage data collaboration platform
-{: .fs-9 }
+# Privacy-preserving data collaboration
+{: .fs-8 }
 
-Datavillage data collaboration console documentation
-{: .fs-6 .fw-300 }
+Datavillage enables organizations to process sensitive and personal information in an interoperable way with other parties (organizations or individuals) while ensuring control of data and algorithms throughout the collaboration process. Organizations can access data without collecting it on their system and they can share data without fear of it being misused or of losing their competitive advantage. It's about <b>sharing without showing</b>.
 
-[comment]: <> ([Get started now]&#40;#getting-started&#41;{: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 })
+Datavillage provides the <b>privacy-preserving data collaboration platform</b> and <b>developer APIss</b> implementing privacy by design and automating trusted and transparent data collaboration.
 
-[comment]: <> ([View it on GitHub]&#40;https://github.com/just-the-docs/just-the-docs&#41;{: .btn .fs-5 .mb-4 .mb-md-0 })
+Privacy by design is implemented based on end-to-end data encryption and transparent governance:
+- Data are encrypted at rest and in transit
+- Data are encrypted while beeing processed
+- Confidential algorythm is running is a fully sandboxed environment
+- Only derived data can be accessed by data consumer
+- Individuals are in control of their data and can join collaborations with explicit consent
 
----
 
-## Getting started
+## Data collaboration spaces
 
-### Quick start: Create your Developer account and request client access.
+## Use cases
 
-1. Go to the [developer console](https://developer-console.herokuapp.com/) and click `Connect with Github`, you will be redirected the GitHub login.
-   
-   <small>Datavillage will only be able to identify you and read your public information.</small>
-
-2. If you connect for the first time, your "My Applications" page will be empty, contact [Datavillage](mailto:contact@datavillage.me) or your project manager to request your access.
-
-### Create a new application
-
-1. Click the `New Application` button present on the home page or on the left menu bar. 
-
-2. If you have access to multiple clients, select the one that will own the application.
-
-3. Enter the application name.
-
-4. You can also enter the `Pod Name` (this is the folder name in which the algorithm results will be stored in the user POD) and an application `Description`.
-
-5. Select the Cloud Provider you want to deploy your application to. By default `AWS` is selected.
-
----
-
-## About the project
-
-Datavillage is &copy; 2018-{{ "now" | date: "%Y" }}.
-
-[comment]: <> (### License)
-
-[comment]: <> (Just the Docs is distributed by an [MIT license]&#40;https://github.com/just-the-docs/just-the-docs/tree/main/LICENSE.txt&#41;.)
-
-[comment]: <> (### Contributing)
-
-[comment]: <> (When contributing to this repository, please first discuss the change you wish to make via issue,)
-
-[comment]: <> (email, or any other method with the owners of this repository before making a change. Read more about becoming a contributor in [our GitHub repo]&#40;https://github.com/just-the-docs/just-the-docs#contributing&#41;.)
-
-[comment]: <> (#### Thank you to the contributors of Just the Docs!)
-
-[comment]: <> (<ul class="list-style-none">)
-
-[comment]: <> ({% for contributor in site.github.contributors %})
-
-[comment]: <> (  <li class="d-inline-block mr-1">)
-
-[comment]: <> (     <a href="{{ contributor.html_url }}"><img src="{{ contributor.avatar_url }}" width="32" height="32" alt="{{ contributor.login }}"/></a>)
-
-[comment]: <> (  </li>)
-
-[comment]: <> ({% endfor %})
-
-[comment]: <> (</ul>)
-
-[comment]: <> (### Code of Conduct)
-
-[comment]: <> (Just the Docs is committed to fostering a welcoming community.)
-
-[comment]: <> ([View our Code of Conduct]&#40;https://github.com/just-the-docs/just-the-docs/tree/main/CODE_OF_CONDUCT.md&#41; on our GitHub repository.)
+## End-to-end confidentiality

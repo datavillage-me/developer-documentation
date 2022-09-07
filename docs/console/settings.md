@@ -2,7 +2,7 @@
 layout: default
 title: Settings
 nav_order: 3
-parent: Application Settings
+parent: Console
 ---
 
 # Overview
@@ -24,6 +24,6 @@ By default, the cage isn't sandboxed, this means that the cage doesn't block any
 ## PostgreSQL
 ## Jupyter
 
-If enable, you can access your Jupyter notebook from the Jupyter notebook link in the [header section]({{ site.baseurl }}{% link docs/applicationSettings/header.md %}).
+If enable, you can access your Jupyter notebook from the Jupyter notebook link in the [header section]({{ site.baseurl }}{% link docs/console/header.md %}).
 
 ## CRON triggers

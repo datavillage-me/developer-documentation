@@ -1,6 +1,6 @@
 ---
 layout: default
-title: API
+title: API reference
 ---
 <head>
   <meta charset="utf-8" />

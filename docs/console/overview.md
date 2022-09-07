@@ -2,7 +2,7 @@
 layout: default
 title: Overview
 nav_order: 2
-parent: Application Settings
+parent: Console
 ---
 
 # Overview
@@ -28,7 +28,7 @@ Some application details (read only)
 
 ## Active users
 
-This is where you can see the number of users that have signed the consent through the passport web application accessible from `Consent Link` in the [header section]({{ site.baseurl }}{% link docs/applicationSettings/header.md %}).
+This is where you can see the number of users that have signed the consent through the passport web application accessible from `Consent Link` in the [header section]({{ site.baseurl }}{% link docs/console/header.md %}).
 
 ## Recent status history
 

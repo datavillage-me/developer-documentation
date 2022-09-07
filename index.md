@@ -2,7 +2,7 @@
 layout: default
 title: Home
 nav_order: 1
-description: "Datavillage developer documentation."
+description: "Datavillage developer documentation"
 permalink: /
 ---
 

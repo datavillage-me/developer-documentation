@@ -9,7 +9,7 @@ parent: Console
 {: .no_toc }
 ---
 
-The overview is the first and default section of the application details page.
+Manage your `Datacage` and get an overview of the recent activities.
 
 ![](../../assets/images/application-overview.png)
 
@@ -17,10 +17,10 @@ The overview is the first and default section of the application details page.
 
 You can take multiple actions on your application from there:
 
-1. `Deploy` / `Redeploy` your algorithm to the cage.
-2. Delete your application from the cage (only the algorithm will be deleted, you will be able to deploy later).
-3. `Get Status` of the cage
-4. `Get Logs` from the cage
+1. `Deploy` / `Redeploy` your algorithm to the `Datacage`.
+2. Delete your application from the `Datacage` (only the algorithm will be deleted, you will be able to deploy later).
+3. `Get Status` of the `Datacage`
+4. `Get Logs` from the `Datacage`
 
 ## Application details
 

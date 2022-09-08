@@ -9,21 +9,24 @@ parent: Console
 {: .no_toc }
 ---
 
-The settings section is where you can edit your data cage settings. Please note that the changes are NOT saved automatically, you need to save them manually to see them applied.
+Edit your collaboration space  settings. Please note that the changes are NOT saved automatically, you need to save them manually to see them applied.
 
 ![](../../assets/images/application-settings.png)
 
 ## Sandboxing
 
-By default, the cage isn't sandboxed, this means that the cage doesn't block any connection from and to any external services. When toggled on, you can still allow some connections by defining the allowed addresses.
-
+By default, the `Datacage` isn't sandboxed, this means that the `Datacage` doesn't block any connection to any external services. When toggled on, you can still allow some connections by defining the allowed addresses.
 
 ## Enclaving
+When toggled on, the `Datacage` is deployed on TEE enclaves.
 
 ## Neo4j
-## PostgreSQL
-## Jupyter
+When toggled on, Neo4J database service is deployed.
 
-If enable, you can access your Jupyter notebook from the Jupyter notebook link in the [header section]({{ site.baseurl }}{% link docs/console/header.md %}).
+## PostgreSQL
+When toggled on, PostgreSQL database service is deployed.
+
+## Jupyter
+If enable, you can access your Jupyter notebook from the link in the [header section]({{ site.baseurl }}{% link docs/console/header.md %}).
 
 ## CRON triggers

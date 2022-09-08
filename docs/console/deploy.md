@@ -11,7 +11,7 @@ parent: Console
 
 ---
 
-This section defines the git repository containing the algorithm to deploy. 
+Connect the trusted code to be deployed in the `Datacage`. 
 
 ![](../../assets/images/application-deploy.png)
 

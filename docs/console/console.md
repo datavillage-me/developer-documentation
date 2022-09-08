@@ -6,8 +6,8 @@ has_children: true
 permalink: docs/console
 ---
 
-# Application settings
+# Collaboration console
 {: .no_toc }
 
-You can find everything you know about configuring your application in the following sections..
+You can find everything you need about configuring your collaboration space with the collaboration console in the following sections.
 {: .fs-6 .fw-300 }

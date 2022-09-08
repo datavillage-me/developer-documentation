@@ -33,11 +33,11 @@ permalink: /quickStart
 <br/>
 <img classname="testclassname" style="width: 50px" src="assets/images/logo-aws.png">
 
-Deploy the neutral environment on Aws
+Deploy the `Datacage` on Aws
 
 <img classname="testclassname" style="width: 90px" src="assets/images/logo-azure.png">
 
-Deploy the neutral environment on Azure
+Deploy the `Datacage` on Azure
 
 ### Data pipelines
 <br/>

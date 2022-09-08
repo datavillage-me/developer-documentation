@@ -31,37 +31,37 @@ permalink: /quickStart
 
 ### Cloud providers
 <br/>
-<img classname="testclassname" style="width: 50px" src="../../assets/images/logo-aws.png">
+<img classname="testclassname" style="width: 50px" src="../assets/images/logo-aws.png">
 
 Deploy the neutral environment on Aws
 
-<img classname="testclassname" style="width: 90px" src="../../assets/images/logo-azure.png">
+<img classname="testclassname" style="width: 90px" src="../assets/images/logo-azure.png">
 
 Deploy the neutral environment on Azure
 
 ### Data pipelines
 <br/>
-<img classname="testclassname" style="width: 50px" src="../../assets/images/logo-s3.png">
+<img classname="testclassname" style="width: 50px" src="../assets/images/logo-s3.png">
 
 Connect enterprise data from amazon S3 buckets 
 
-<img classname="testclassname" style="width: 60px" src="../../assets/images/logo-azureblob.png">
+<img classname="testclassname" style="width: 60px" src="../assets/images/logo-azureblob.png">
 
 Connect enterprise data from Azure blob storage 
 
 ### Personal information systems
 <br/>
-<img classname="testclassname" style="width: 50px" src="../../assets/images/solid-logo.png">
+<img classname="testclassname" style="width: 50px" src="../assets/images/solid-logo.png">
 
 Connect directly Solid POD's from individuals as data provider
 
 ### Development languages and tools
 <br/>
 
-<img classname="testclassname" style="width: 50px" src="../../assets/images/logo-python.webp">
+<img classname="testclassname" style="width: 50px" src="../assets/images/logo-python.webp">
 
 Use Python as development language for the algorithm
 
-<img classname="testclassname" style="width: 50px" src="../../assets/images/jupyter-logo.png">
+<img classname="testclassname" style="width: 50px" src="../assets/images/jupyter-logo.png">
 
 Use Notebook to build your algorithm (on sample datasets) 

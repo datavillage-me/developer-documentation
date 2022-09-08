@@ -1,6 +1,7 @@
 ---
 layout: default
 title: API reference
+nav_order: 3
 ---
 <head>
   <meta charset="utf-8" />

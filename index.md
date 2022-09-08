@@ -29,7 +29,7 @@ Organizations can create <b>data collaboration spaces</b> involving other organi
 
 As illustrated in the diagram below, a participant can have several roles.
 
-![](../../assets/images/collaboration-space.png)
+![](../assets/images/collaboration-space.png)
 
 ## End-to-end confidentiality
 End-to-end confidentiality guarantees each participant a <b>complete level of control and transparency</b> over the collaboration:

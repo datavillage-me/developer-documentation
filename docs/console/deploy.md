@@ -2,7 +2,7 @@
 layout: default
 title: Deploy
 nav_order: 5
-parent: Application Settings
+parent: Console
 ---
 
 # Deploy
@@ -11,7 +11,7 @@ parent: Application Settings
 
 ---
 
-This section defines the git repository containing the algorithm to deploy. 
+Connect the trusted code to be deployed in the `Datacage`. 
 
 ![](../../assets/images/application-deploy.png)
 

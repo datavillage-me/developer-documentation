@@ -1,6 +1,13 @@
-title: "Datavillage developer documentation"
+title: "Datavillage Developer Documentation"
 logo: "/assets/images/datavillage-logo.png"
 remote_theme: just-the-docs/just-the-docs
 search_enabled: true
 # For localhost, uncomment following line
-#theme: just-the-docs
+# theme: just-the-docs
+
+# Aux links for the upper right navigation
+aux_links:
+  "Go to the collaboration platform":
+    - "https://developer-console.herokuapp.com/"
+
+aux_links_new_tab: true

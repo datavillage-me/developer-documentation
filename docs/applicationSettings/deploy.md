@@ -29,7 +29,7 @@ This section defines the git repository containing the algorithm to deploy.
    | `Saving algorithm result to user's pods` |
    | `Saving algorithm explains to user's pods` |
    
-   If you don't want to use the library, you can also make the http calls inside the algorithm. A OpenAPI documentation is available ths [API section]({{ site.baseurl }}{% link docs/api.md %})
+   If you don't want to use the library, you can also make the http calls inside the algorithm. A OpenAPI documentation is available ths [API section]({{ site.baseurl }}{% link docs/api/api.md %})
 
 5. Enter the clone SSH git url of your repository. For GitHub you can find this URL here:
 

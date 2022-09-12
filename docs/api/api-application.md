@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Applications Management API
-parent: APIs
+parent: APIs References
 ---
 <head>
   <meta charset="utf-8" />
@@ -20,7 +20,7 @@ parent: APIs
   window.onload = () => {
     window.ui = SwaggerUIBundle({
       url: 'https://api-dev.datavillage.me/docs/application-mgnt-swagger.yaml',
-      dom_id: '#swagger-ui',
+      dom_id: '#swagger-ui'
     });
   };
 </script>

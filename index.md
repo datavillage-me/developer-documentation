@@ -9,7 +9,8 @@ permalink: /
 # Privacy-preserving data collaboration
 {: .fs-8 }
 
-Datavillage enables organizations to process sensitive and personal information in an interoperable way with other parties (organizations or individuals) while ensuring control of data and algorithms throughout the collaboration process. Organizations can access data without collecting it on their system and they can share data without fear of it being misused or of losing their competitive advantage. It's about <b>sharing without showing</b>.
+Datavillage enables organizations to generate new insights through zero-trust collaboration. Organizations gain access to sensitive and personal data of other parties while confidentiality and integrity of data and algorithms are guaranteed.
+Organizations and individuals  can share data without fear of it being misused or of losing their competitive advantage. It’s about  <b>sharing without showing</b>.
 
 Datavillage provides the <b>privacy-preserving data collaboration platform</b> and <b>developer APIs</b> implementing privacy by design and automating trusted and transparent data collaboration.
 

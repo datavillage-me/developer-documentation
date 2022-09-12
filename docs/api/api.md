@@ -1,6 +1,6 @@
 ---
 layout: default
-title: APIs
+title: APIs References
 has_children: true
 permalink: docs/apis
 ---

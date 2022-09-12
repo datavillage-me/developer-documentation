@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Applications Management API
+title: Collaboration space API
 parent: APIs References
 ---
 <head>

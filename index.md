@@ -39,4 +39,4 @@ End-to-end confidentiality guarantees each participant a <b>complete level of co
 - Only the <b>derived data</b> (results) can leave the neutral environment by the authorized participant
 - The <b>purpose</b> of the collaboration is validated by each participant including consumers via their explicit consent
 - The <b>attestation</b> that the neutral environment is indeed a trusted environment and complies with the requirements
-- The neutral environment, also called `Datacage`, operates on TEE enclaves, sanboxed via micro-firewalls and hardened via GVisor.
+- The neutral environment, also called `Datacage`, operates on TEE enclaves, sanboxed via micro-firewalls.

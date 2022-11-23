@@ -20,7 +20,7 @@ nav_order: 1
 <script>
   window.onload = () => {
     window.ui = SwaggerUIBundle({
-      url: 'https://api-dev.datavillage.me/docs/application-mgnt-swagger.yaml',
+      url: '../generated/application-mgnt-swagger.yaml',
       dom_id: '#swagger-ui'
     });
   };

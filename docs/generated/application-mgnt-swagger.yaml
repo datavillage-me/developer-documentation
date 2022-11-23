@@ -1,0 +1,468 @@
+openapi: 3.0.3
+info:
+  title: Application Management API - OpenAPI 3.0
+  contact:
+    email: developer@datavillage.me
+  version: 1.0.0
+servers:
+  - url: https://dev-api.datavillage.me
+  - url: https://staging-api.datavillage.me
+  - url: https://-api.datavillage.me
+tags:
+  - name: Clients
+  - name: Applications
+  - name: Consent
+paths:
+  /clients:
+    get:
+      tags:
+        - Clients
+      summary: Get Clients
+      operationId: getClients
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Clients'
+        '400':
+          description: Invalid ID supplied
+        '405':
+          description: Validation exception
+
+  /clients/{clientId}:
+    get:
+      tags:
+        - Clients
+      summary: Delete Client
+      operationId: deleteClient
+      parameters:
+        - name: clientId
+          in: path
+          description: ID of the client
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Client not found
+        '405':
+          description: Validation exception
+
+  /clients/{clientId}/applications:
+    get:
+      tags:
+        - Clients
+      summary: Get Client Applications
+      operationId: getClientApplications
+      parameters:
+        - name: clientId
+          in: path
+          description: ID of the client
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Applications'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Client not found
+        '405':
+          description: Validation exception
+    post:
+      tags:
+        - Clients
+      summary: Post Client Application
+      operationId: postClientApplication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApplication'
+      parameters:
+        - name: clientId
+          in: path
+          description: ID of the client
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Applications'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Client not found
+        '405':
+          description: Validation exception
+
+  /clients/{clientId}/applications/{applicationId}:
+    get:
+      tags:
+        - Clients
+      summary: Get Client Application
+      operationId: getClientApplication
+      parameters:
+        - name: clientId
+          in: path
+          description: ID of the client
+          required: true
+          schema:
+            type: string
+        - name: applicationId
+          in: path
+          description: ID of the application
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Application'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Client / Applicaiton not found
+        '405':
+          description: Validation exception
+
+  /clients/{clientId}/applications/{applicationId}/settings:
+    put:
+      tags:
+        - Clients
+      summary: Put Client Application Settings
+      operationId: putClientApplicationApplicationSettings
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationSettings'
+      parameters:
+        - name: clientId
+          in: path
+          description: ID of the client
+          required: true
+          schema:
+            type: string
+        - name: applicationId
+          in: path
+          description: ID of the application
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Application'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Client / Applicaiton not found
+        '405':
+          description: Validation exception
+
+  /clients/{clientId}/applications/{applicationId}/activerUsers:
+    get:
+      tags:
+        - Clients
+      summary: Get Client Application Active Users
+      operationId: getClientApplicationActiveUsers
+      parameters:
+        - name: clientId
+          in: path
+          description: ID of the client
+          required: true
+          schema:
+            type: string
+        - name: applicationId
+          in: path
+          description: ID of the application
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActiveUsers'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Client / Applicaiton not found
+        '405':
+          description: Validation exception
+
+  /applications:
+    get:
+      tags:
+        - Applications
+      summary: Get Applications
+      operationId: getApplications
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Applications'
+        '400':
+          description: Invalid ID supplied
+        '405':
+          description: Validation exception
+
+  /clients/{clientId}/applications/{applicationId}/consentReceipts:
+    post:
+      tags:
+        - Consents
+      summary: Post Consent Receipt
+      operationId: postConsentReceipt
+      parameters:
+        - name: clientId
+          in: path
+          description: ID of the client
+          required: true
+          schema:
+            type: string
+        - name: applicationId
+          in: path
+          description: ID of the application
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostConsentReceipt'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConsentReceipt'
+        '400':
+          description: Invalid ID supplied
+        '405':
+          description: Validation exception
+
+  /consentReceipts/{consentReceiptId}:
+    get:
+      tags:
+        - Consents
+      summary: Get Consent Receipt
+      operationId: getConsentReceipt
+      parameters:
+        - name: consentReceiptId
+          in: path
+          description: ID of the consentReceipt
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConsentReceipt'
+        '400':
+          description: Invalid ID supplied
+        '405':
+          description: Validation exception
+
+  /clients/{clientId}/applications/{applicationId}/currentConsentReceipt:
+    get:
+      tags:
+        - Consents
+      summary: Get Current Consent Receipt
+      operationId: getCurrentConsentReceipt
+      parameters:
+        - name: clientId
+          in: path
+          description: ID of the client
+          required: true
+          schema:
+            type: string
+        - name: applicationId
+          in: path
+          description: ID of the application
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConsentReceipt'
+        '400':
+          description: Invalid ID supplied
+        '405':
+          description: Validation exception
+
+components:
+  schemas:
+    Client:
+      type: object
+      properties:
+        id:
+          type: string
+          format: string
+        name:
+          type: string
+          format: string
+        url:
+          type: string
+          format: string
+        creationDate:
+          type: string
+          format: date-time
+    Clients:
+      type: array
+      items:
+        $ref: '#/components/schemas/Client'
+    Application:
+      allOf:
+        - $ref: '#/components/schemas/PostApplication'
+        - type: object
+          properties:
+            id:
+              type: string
+            clientId:
+              type: string
+            admins:
+              type: array
+              items:
+                type: string
+            creationDate:
+              type: string
+              format: date-time
+    PostApplication:
+      type: object
+      properties:
+        name:
+          type: string
+          format: string
+        description:
+          type: string
+          format: string
+        podFolder:
+          type: string
+          format: string
+        appUrl:
+          type: string
+          format: string
+        cageUrl:
+          type: string
+          format: string
+        allowedCallbacks:
+          type: array
+          items:
+            type: string
+        category:
+          type: string
+          enum: [ media, finance ]
+        extensionSettings:
+          $ref: '#/components/schemas/ExtensionSettings'
+    Applications:
+      type: array
+      items:
+        $ref: '#/components/schemas/Application'
+    ActiveUsers:
+      type: array
+      items:
+        type: string
+    Blob:
+      type: string
+    ApplicationSettings:
+      type: object
+    ExtensionSettings:
+      type: object
+      properties:
+        urlRegex:
+          type: string
+          format: string
+        componentIdentifier:
+          type: string
+          format: string
+        classNameToPrepend:
+          type: string
+          format: string
+
+    PostConsentReceipt:
+      type: object
+      properties:
+        purpose:
+          type: string
+          format: string
+        forProcessing:
+          $ref: '#/components/schemas/DataProcessing'
+        forPersonalData:
+          $ref: '#/components/schemas/ForPersonalData'
+    ConsentReceipt:
+      type: object
+      properties:
+        "@id":
+          type: string
+        "@context":
+          type: string
+        "gConsent:atTime":
+          type: object
+          properties:
+            "time:inXSDDateTimeStamp":
+              type: string
+        "gConsent:forProcessing":
+          $ref: '#/components/schemas/DataProcessing'
+        "gConsent:forPersonalData":
+          $ref: '#/components/schemas/ForPersonalData'
+        "gConsent:purpose":
+          type: string
+        clientId:
+          type: string
+        applicationId:
+          type: string
+        previousConsentReceiptId:
+          type: string
+    ForPersonalData:
+      type: object
+      properties:
+        "dvConsent:personalDataType":
+          type: string
+        "dvConsent:personalDataSource":
+          type: array
+          items:
+            type: string
+    DataProcessing:
+      type: array
+      items:
+        type: string
+        enum: ["gConsent:DataAdaptation","gConsent:DataAlignment","gConsent:DataAlteration","gConsent:DataCollection","gConsent:DataCombination","gConsent:DataConsultation","gConsent:DataDestruction","gConsent:DataDisclosure","gConsent:DataDissemination","gConsent:DataErasure","gConsent:DataOrganisation","gConsent:DataRecording","gConsent:DataRestriction","gConsent:DataRetrieval","gConsent:DataSharing","gConsent:DataStorage","gConsent:DataStructuring","gConsent:DataUse"]

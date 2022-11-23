@@ -20,8 +20,8 @@ nav_order: 2
 <script>
   window.onload = () => {
     window.ui = SwaggerUIBundle({
-      // url: 'https://api-dev.datavillage.me/docs/data-cage-swagger.yaml',
-      // hardcode permalink to latest main version in the dv-platform codebase
+      /* url: 'https://api-dev.datavillage.me/docs/data-cage-swagger.yaml',
+       hardcode permalink to latest main version in the dv-platform codebase */
       url: 'https://raw.githubusercontent.com/datavillage-me/dv-platform/main/packages/api/static/data-cage-swagger.yaml?token=GHSAT0AAAAAAB24CMDQVKBZSMGEMDX2UHDEY357FMA',
       dom_id: '#swagger-ui',
     });

@@ -22,7 +22,7 @@ permalink: /quickStart
 
 2. Enter the application name and application description
 
-3. If you want to involve individuals and their data into the collaboration, enter the `Pod Name`. This will be used as the folder name in the individual's Personal Data Store to store the information resulting from the data processing in the confidential collaboration space.
+3. If you want to involve consumers and their data into the collaboration, enter the `Pod Name`. This will be used as the folder name in the individual's Personal Data Store to store the information resulting from the data processing in the confidential collaboration space.
 
 4. Select the Cloud Provider you want to deploy your application to. Either `AWS` or `Azure` for now.
 
@@ -52,11 +52,7 @@ Connect enterprise data from Azure blob storage
 <br/>
 <img classname="testclassname" style="width: 50px" src="assets/images/solid-logo.png">
 
-Connect directly Solid POD's from individuals as data provider
-
-<img classname="testclassname" style="width: 50px" src="assets/images/drive-logo.png">
-
-We also connected Google Drive. Although it is far from being a personal information management system, we allow the use of google drive for testing purposes for individuals who do not yet have a personal information management system.
+Connect directly Solid POD's from consumers as data provider
 
 ### Development languages and tools
 <br/>

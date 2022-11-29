@@ -2,17 +2,17 @@
 layout: default
 title: Introduction
 nav_order: 1
-description: "Datavillage Developer Documentation"
+description: "Datavillage Technical Documentation"
 permalink: /
 ---
 
 # Data collaboration for organizations and consumers
 {: .fs-8 }
 
-Datavillage enables organizations to generate new insights through <b>data collaboration</b> with partners and consumers. Organizations gain access to sensitive and personal data of other parties while confidentiality and integrity of data and algorithms are guaranteed.
-Organizations and consumers can share data without fear of it being misused or of losing their competitive advantage. It’s about  <b>sharing without showing</b>.
+Datavillage enables organizations to collaborate on data with other organizations and their consumers with privacy. Organizations gain access to sensitive and personal data of other parties while confidentiality and integrity of data and algorithms are guaranteed.
+Organizations and consumers can share data without fear of it being misused or of losing their competitive advantage. It’s about <b>sharing without showing</b>.
 
-Datavillage provides the <b>data collaboration platform</b> and <b>developer APIs</b> implementing privacy by design and automating trusted and transparent data processing.
+Datavillage provides the <b><u>D</u>ata <u>C</u>ollaboration <u>P</u>latform</b> implementing privacy by design and automating trusted and transparent insights generation.
 
 Privacy by design is implemented based on end-to-end data encryption and transparent governance:
 - Data are encrypted at rest and in transit

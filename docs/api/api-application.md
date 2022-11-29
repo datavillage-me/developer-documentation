@@ -11,7 +11,7 @@ nav_order: 1
     name="description"
     content="SwaggerUI"
   />
-  <title>SwaggerUI</title>
+  <title>SwaggerUIs</title>
   <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@4.5.0/swagger-ui.css" />
 </head>
 <body>

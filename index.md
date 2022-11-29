@@ -23,10 +23,10 @@ Privacy by design is implemented based on end-to-end data encryption and transpa
 
 
 ## Data collaboration spaces
-Organizations can create <b>data collaboration spaces</b> involving other organizations and their consumers directly. The participants meet in the neutral environment:
-- The <b>data providers</b> that provide the input data. The data providers can be organizations providing enterprise data or consumers directly connecting their personal data through a consent mechanism. The data is only visible in the secure neutral environment by a trusted algorithm.
-- The <b>code provider</b> that provides the algorithm that will run on the data. Only the trusted algorithm will have access to the data in the neutral environment to process them.
-- The <b>data consumers</b> who access the results of the algorithm (derived data). Only data consumers can access the result within the neutral environment.
+Organizations can create <b>data collaboration spaces</b> involving other organizations and their consumers directly. The participants meet in the confidential environment:
+- The <b>data providers</b> that provide the raw data. The data providers can be organizations providing enterprise data or consumers directly connecting zero-party personal data through their data vault. The data is only visible in the secure environment by the trusted algorithm.
+- The <b>code provider</b> that provides the algorithm that will run on the data. The code provider describes the algorithm and the output model (ontology) for derived data.
+- The <b>data consumers</b> who access the results of the algorithm (derived data). Only data consumers can access the result from the confidential environment. Consumers get result directly in their personal data vault.
 
 As illustrated in the diagram below, a participant can have several roles.
 
@@ -35,8 +35,8 @@ As illustrated in the diagram below, a participant can have several roles.
 ## End-to-end confidentiality
 End-to-end confidentiality guarantees each participant a <b>complete level of control and transparency</b> over the collaboration:
 - The <b>identity</b> of each participant both organizations and consumers is known and validated
-- The <b>data</b> can only be accessed in the neutral environment by the approved code
-- Only the <b>derived data</b> (results) can leave the neutral environment by the authorized participant
+- The <b>data</b> can only be accessed in the confidential environment by the approved code. Personal data are stored in the data vault of consumers.
+- Only the <b>derived data</b> (results) can leave the confidential environment by the authorized participant
 - The <b>purpose</b> of the collaboration is validated by each participant including consumers via their explicit consent
-- The <b>attestation</b> that the neutral environment is indeed a trusted environment and complies with the requirements
-- The neutral environment, also called `Datacage`, operates on TEE enclaves, sanboxed via micro-firewalls.
+- The <b>attestation</b> that the confidential environment is indeed a trusted environment and complies with the requirements
+- The confidential environment, also called `Datacage`, operates on TEE enclaves, sanboxed via micro-firewalls.

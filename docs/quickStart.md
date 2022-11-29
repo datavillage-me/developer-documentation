@@ -8,59 +8,26 @@ permalink: /quickStart
 # Getting started
 {: .fs-8 }
 
-## Create your developer account
+## Register your organization
+![](assets/images/client-registration.png)
+1. Go to the [collaboration console](https://console.datavillage.me/) and register your organization.
+2. You will receive an email to confirm your registration and log in as the first employee - owner of the collaboration space.
 
-1. Go to the [collaboration console](https://developer-console.herokuapp.com/) and click `Connect with Github`, you will be redirected the GitHub login.
-   
-   <small>Datavillage will only be able to identify you and read your public information.</small>
+## Create a new collaboration space
+![](assets/images/collaboration-space-creation.png)
 
-2. If you connect for the first time, contact [Datavillage](mailto:contact@datavillage.me) or your organization's data product owner to link your account to your organization.
+1. Click the `New Collaboration Space` button present on the home page. 
 
-## Create a new collaboration
+2. Enter the your collaboration space preferences.
 
-1. Click the `New Application` button present on the home page or on the left menu bar. 
+2. Confirm the creation.
 
-2. Enter the application name and application description
+## Invite participants
+![](assets/images/collaboration-space-participants.png)
+1. Click on the `Add more` button for data providers to ask participants to join the collaboration space. Add yourself if your organization is itself a data provider.
+2. Click on the `Add more` button for code provider to ask the participant to join the collaboration space. Add yourself if your organization is itself a code provider (only one code provider per collaboration space).
+3. Click on the `Add more` button for data consumers to ask participants to join the collaboration space. Add yourself if your organization is itself a data consumer.
 
-3. If you want to involve consumers and their data into the collaboration, enter the `Pod Name`. This will be used as the folder name in the individual's Personal Data Store to store the information resulting from the data processing in the confidential collaboration space.
+## Next steps
+Go to the Console menu to see how the Collaboration Console helps you describe, manage, and perform your collaboration as a confidential data product.
 
-4. Select the Cloud Provider you want to deploy your application to. Either `AWS` or `Azure` for now.
-
-## Available integrations
-
-### Cloud providers
-<br/>
-<img classname="testclassname" style="width: 50px" src="assets/images/logo-aws.png">
-
-Deploy the `Datacage` on Aws
-
-<img classname="testclassname" style="width: 90px" src="assets/images/logo-azure.png">
-
-Deploy the `Datacage` on Azure
-
-### Data pipelines
-<br/>
-<img classname="testclassname" style="width: 50px" src="assets/images/logo-s3.png">
-
-Connect enterprise data from amazon S3 buckets 
-
-<img classname="testclassname" style="width: 60px" src="assets/images/logo-azureblob.png">
-
-Connect enterprise data from Azure blob storage 
-
-### Personal information systems
-<br/>
-<img classname="testclassname" style="width: 50px" src="assets/images/solid-logo.png">
-
-Connect directly Solid POD's from consumers as data provider
-
-### Development languages and tools
-<br/>
-
-<img classname="testclassname" style="width: 50px" src="assets/images/logo-python.webp">
-
-Use Python as development language for the algorithm
-
-<img classname="testclassname" style="width: 50px" src="assets/images/jupyter-logo.png">
-
-Use Notebook to build your algorithm (on sample datasets) 

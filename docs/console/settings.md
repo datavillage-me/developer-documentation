@@ -2,7 +2,7 @@
 layout: default
 title: Settings
 nav_order: 3
-parent: Console
+parent: Console (old version)
 ---
 
 # Overview

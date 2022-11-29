@@ -1,13 +1,10 @@
 openapi: 3.0.3
 info:
-  title: Application Management API - OpenAPI 3.0
+  title: Data product API 
   contact:
     email: developer@datavillage.me
-  version: 1.0.0
-servers:
-  - url: https://dev-api.datavillage.me
-  - url: https://staging-api.datavillage.me
-  - url: https://-api.datavillage.me
+  version: 0.9.0
+
 tags:
   - name: Clients
   - name: Applications

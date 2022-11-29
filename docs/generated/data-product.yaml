@@ -1,0 +1,398 @@
+openapi: 3.0.3
+info:
+  title: Data product API - OpenAPI 3.0
+  contact:
+    email: developer@datavillage.me
+  version: 0.9.0
+
+
+paths:
+  /tmp_sgx_files/:
+    get:
+      summary: List Sgx Files
+      description: List available sgx files
+      operationId: list_sgx_files_tmp_sgx_files__get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /attestation:
+    get:
+      summary: Attestation
+      description: Get the sgx attestation
+      operationId: attestation_attestation_get
+      parameters:
+        - required: true
+          schema:
+            title: User Report
+            type: string
+          name: user_report
+          in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Attestation
+                required:
+                  - QUOTE_LENGTH
+                  - DEBUG_BIT
+                  - ATTRIBUTES.FLAGS
+                  - ATTRIBUTES.XFRM
+                  - MRENCLAVE
+                  - MRSIGNER
+                  - ISVPRODID
+                  - ISVSVN
+                  - REPORTDATA
+                type: object
+                properties:
+                  QUOTE_LENGTH:
+                    title: Quote Length
+                    type: integer
+                  DEBUG_BIT:
+                    title: Debug Bit
+                    type: boolean
+                  ATTRIBUTES.FLAGS:
+                    title: Attributes.Flags
+                    type: string
+                  ATTRIBUTES.XFRM:
+                    title: Attributes.Xfrm
+                    type: string
+                  MRENCLAVE:
+                    title: Mrenclave
+                    type: string
+                  MRSIGNER:
+                    title: Mrsigner
+                    type: string
+                  ISVPRODID:
+                    title: Isvprodid
+                    type: string
+                  ISVSVN:
+                    title: Isvsvn
+                    type: string
+                  REPORTDATA:
+                    title: Reportdata
+                    type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                title: HTTPValidationError
+                type: object
+                properties:
+                  detail:
+                    title: Detail
+                    type: array
+                    items:
+                      title: ValidationError
+                      required:
+                        - loc
+                        - msg
+                        - type
+                      type: object
+                      properties:
+                        loc:
+                          title: Location
+                          type: array
+                          items:
+                            anyOf:
+                              - type: string
+                              - type: integer
+                        msg:
+                          title: Message
+                          type: string
+                        type:
+                          title: Error Type
+                          type: string
+  
+  /tmpfs/:
+    get:
+      summary: List Tmpfs
+      description: List available output files
+      operationId: list_tmpfs_tmpfs__get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /event:
+    get:
+      summary: Get Event
+      description: >-
+        Read an event from the redis stream of the datacage (for debugging
+        purpose).
+      operationId: get_event_event_get
+      parameters:
+        - required: false
+          schema:
+            title: Stream Name
+            default: events
+          name: stream_name
+          in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Event Event Get
+                type: array
+                items:
+                  type: object
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                title: HTTPValidationError
+                type: object
+                properties:
+                  detail:
+                    title: Detail
+                    type: array
+                    items:
+                      title: ValidationError
+                      required:
+                        - loc
+                        - msg
+                        - type
+                      type: object
+                      properties:
+                        loc:
+                          title: Location
+                          type: array
+                          items:
+                            anyOf:
+                              - type: string
+                              - type: integer
+                        msg:
+                          title: Message
+                          type: string
+                        type:
+                          title: Error Type
+                          type: string
+    post:
+      summary: Post Event
+      description: >-
+        Post an event at destination of the app algorithm on the redis stream of
+        the datacage.
+      operationId: post_event_event_post
+      parameters:
+        - required: false
+          schema:
+            title: Stream Name
+            default: events
+          name: stream_name
+          in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: EventMessage
+              required:
+                - type
+              type: object
+              properties:
+                type:
+                  title: Type
+                  type: string
+                userIds:
+                  title: Userids
+                  type: array
+                  items:
+                    type: string
+                data:
+                  title: Data
+                  type: object
+              description: Expected structure for an Event Message
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Post Event Event Post
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                title: HTTPValidationError
+                type: object
+                properties:
+                  detail:
+                    title: Detail
+                    type: array
+                    items:
+                      title: ValidationError
+                      required:
+                        - loc
+                        - msg
+                        - type
+                      type: object
+                      properties:
+                        loc:
+                          title: Location
+                          type: array
+                          items:
+                            anyOf:
+                              - type: string
+                              - type: integer
+                        msg:
+                          title: Message
+                          type: string
+                        type:
+                          title: Error Type
+                          type: string
+  /run:
+    post:
+      summary: Post Run Event
+      description: >-
+        Post an event at destination of the app algorithm on the redis stream of
+        the datacage.
+      operationId: post_run_event_run_post
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Post Run Event Run Post
+                type: string
+components:
+  schemas:
+    Attestation:
+      title: Attestation
+      required:
+        - QUOTE_LENGTH
+        - DEBUG_BIT
+        - ATTRIBUTES.FLAGS
+        - ATTRIBUTES.XFRM
+        - MRENCLAVE
+        - MRSIGNER
+        - ISVPRODID
+        - ISVSVN
+        - REPORTDATA
+      type: object
+      properties:
+        QUOTE_LENGTH:
+          title: Quote Length
+          type: integer
+        DEBUG_BIT:
+          title: Debug Bit
+          type: boolean
+        ATTRIBUTES.FLAGS:
+          title: Attributes.Flags
+          type: string
+        ATTRIBUTES.XFRM:
+          title: Attributes.Xfrm
+          type: string
+        MRENCLAVE:
+          title: Mrenclave
+          type: string
+        MRSIGNER:
+          title: Mrsigner
+          type: string
+        ISVPRODID:
+          title: Isvprodid
+          type: string
+        ISVSVN:
+          title: Isvsvn
+          type: string
+        REPORTDATA:
+          title: Reportdata
+          type: string
+    Body_upload_code_resources_code_post:
+      title: Body_upload_code_resources_code_post
+      required:
+        - in_file
+      type: object
+      properties:
+        in_file:
+          title: In File
+          type: string
+          format: binary
+    Body_upload_data_resources_data_post:
+      title: Body_upload_data_resources_data_post
+      required:
+        - in_file
+      type: object
+      properties:
+        in_file:
+          title: In File
+          type: string
+          format: binary
+    EventMessage:
+      title: EventMessage
+      required:
+        - type
+      type: object
+      properties:
+        type:
+          title: Type
+          type: string
+        userIds:
+          title: Userids
+          type: array
+          items:
+            type: string
+        data:
+          title: Data
+          type: object
+      description: Expected structure for an Event Message
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            title: ValidationError
+            required:
+              - loc
+              - msg
+              - type
+            type: object
+            properties:
+              loc:
+                title: Location
+                type: array
+                items:
+                  anyOf:
+                    - type: string
+                    - type: integer
+              msg:
+                title: Message
+                type: string
+              type:
+                title: Error Type
+                type: string
+    ValidationError:
+      title: ValidationError
+      required:
+        - loc
+        - msg
+        - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+              - type: string
+              - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string

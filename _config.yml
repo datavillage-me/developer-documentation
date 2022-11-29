@@ -1,9 +1,9 @@
 title: "Datavillage Technical Documentation"
 logo: "/assets/images/datavillage-logo.png"
-remote_theme: just-the-docs/just-the-docs
+#remote_theme: just-the-docs/just-the-docs
 search_enabled: true
 # For localhost, uncomment following line
-#theme: just-the-docs
+theme: just-the-docs
 
 # Aux links for the upper right navigation
 aux_links:

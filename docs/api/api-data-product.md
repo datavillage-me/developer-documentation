@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Code provider API
+title: Data product API
 parent: APIs References
-nav_order: 2
+nav_order: 1
 ---
 <head>
   <meta charset="utf-8" />
@@ -20,8 +20,8 @@ nav_order: 2
 <script>
   window.onload = () => {
     window.ui = SwaggerUIBundle({
-      url: '../generated/data-cage-swagger.yaml',
-      dom_id: '#swagger-ui',
+      url: '../generated/data-product.yaml',
+      dom_id: '#swagger-ui'
     });
   };
 </script>

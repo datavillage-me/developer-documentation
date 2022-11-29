@@ -1,0 +1,71 @@
+openapi: 3.0.3
+info:
+  title: Data product API - OpenAPI 3.0
+  contact:
+    email: developer@datavillage.me
+  version: 0.9.0
+
+
+paths:
+  /resources/outputs/:
+    get:
+      summary: List Output
+      description: List available output files
+      operationId: list_output_resources_outputs__get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /resources/output/{filename}:
+    get:
+      summary: Download Output
+      description: Download an output form the cage
+      operationId: download_output_resources_output__filename__get
+      parameters:
+        - required: true
+          schema:
+            title: Filename
+            type: string
+          name: filename
+          in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                title: HTTPValidationError
+                type: object
+                properties:
+                  detail:
+                    title: Detail
+                    type: array
+                    items:
+                      title: ValidationError
+                      required:
+                        - loc
+                        - msg
+                        - type
+                      type: object
+                      properties:
+                        loc:
+                          title: Location
+                          type: array
+                          items:
+                            anyOf:
+                              - type: string
+                              - type: integer
+                        msg:
+                          title: Message
+                          type: string
+                        type:
+                          title: Error Type
+                          type: string
+  

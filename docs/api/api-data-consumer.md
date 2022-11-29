@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Collaboration space API
+title: Data Consumer API
 parent: APIs References
-nav_order: 1
+nav_order: 4
 ---
 <head>
   <meta charset="utf-8" />
@@ -11,7 +11,7 @@ nav_order: 1
     name="description"
     content="SwaggerUI"
   />
-  <title>SwaggerUIs</title>
+  <title>SwaggerUI</title>
   <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@4.5.0/swagger-ui.css" />
 </head>
 <body>
@@ -20,8 +20,8 @@ nav_order: 1
 <script>
   window.onload = () => {
     window.ui = SwaggerUIBundle({
-      url: '../generated/application-mgnt-swagger.yaml',
-      dom_id: '#swagger-ui'
+      url: '../generated/data-consumer.yaml',
+      dom_id: '#swagger-ui',
     });
   };
 </script>

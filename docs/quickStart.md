@@ -10,7 +10,7 @@ permalink: /quickStart
 
 ## Register your organization
 ![](assets/images/client-registration.png)
-1. Go to the [collaboration console](https://console.datavillage.me/) and register your organization.
+1. Go to the [collaboration console](https://www.datavillage.me/console) and register your organization.
 2. You will receive an email to confirm your registration and log in as the first employee - owner of the collaboration space.
 
 ## Create a new collaboration space

@@ -3,11 +3,9 @@ layout: default
 title: Introduction
 nav_order: 1
 description: "Datavillage Technical Documentation"
-permalink: /
 ---
 
 # Data collaboration for organizations and consumers
-{: .fs-8 }
 
 Datavillage enables organizations to collaborate on data with other organizations and their consumers with privacy. Organizations gain access to sensitive and personal data of other parties while confidentiality and integrity of data and algorithms are guaranteed.
 Organizations and consumers can share data without fear of it being misused or of losing their competitive advantage. It’s about <b>sharing without showing</b>.

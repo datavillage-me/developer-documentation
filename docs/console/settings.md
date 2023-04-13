@@ -30,3 +30,25 @@ When toggled on, PostgreSQL database service is deployed.
 If enable, you can access your Jupyter notebook from the link in the [header section]({{ site.baseurl }}{% link docs/console/header.md %}).
 
 ## CRON triggers
+
+=== "C"
+
+    ``` c
+    #include <stdio.h>
+
+    int main(void) {
+      printf("Hello world!\n");
+      return 0;
+    }
+    ```
+
+=== "C++"
+
+    ``` c++
+    #include <iostream>
+
+    int main(void) {
+      std::cout << "Hello world!" << std::endl;
+      return 0;
+    }
+    ```

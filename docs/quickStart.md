@@ -2,11 +2,8 @@
 layout: default
 title: Getting started
 nav_order: 1
-permalink: /quickStart
 ---
-
 # Getting started
-{: .fs-8 }
 
 ## Register your organization
 ![](assets/images/client-registration.png)

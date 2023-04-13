@@ -1,0 +1,25 @@
+site_name: Technical Documentation
+
+theme:
+  name: material
+  favicon: assets/images/favicon.ico
+  logo: assets/images/Codename_Logo_White.svg
+  features:
+    - toc.integrate
+    - navigation.footer
+  custom_dir: custom_theme/
+
+use_directory_urls: false
+
+extra_css:
+  - stylesheets/custom.css
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra:
+  generator: false
+
+copyright: Copyright &copy; Datavillage 2023

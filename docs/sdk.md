@@ -6,9 +6,7 @@ permalink: /sdk
 ---
 
 # Participants SDK
-{: .fs-8 }
 Software development kit and code snippets for participants of a collaboration space.
-{: .fs-6 .fw-300 }
 
 ## Data provider SDK
 There are two different ways to connect data with the Datacage:

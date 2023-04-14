@@ -23,3 +23,7 @@ extra:
   generator: false
 
 copyright: Copyright &copy; Datavillage 2023
+
+plugins:
+  - awesome-pages:
+      order_by: filename

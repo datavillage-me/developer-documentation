@@ -15,7 +15,7 @@ Datavillage provides the <b><u>D</u>ata <u>C</u>ollaboration <u>P</u>latform</b>
 Privacy by design is implemented based on end-to-end data encryption and transparent governance:
 - Data are encrypted at rest and in transit
 - Data are encrypted while beeing processed
-- Confidential algorythm is running is a fully sandboxed environment
+- Confidential algorithm is running is a fully sandboxed environment
 - Only derived data can be accessed by data consumer
 - Consumers are in control of their data and can join collaborations with explicit consent
 

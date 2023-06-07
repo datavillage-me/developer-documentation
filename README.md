@@ -2,29 +2,24 @@
 
 ## Deployment
 
-This static  website is automatically deploy using GitHub Pages and can be accessed [here](https://datavillage-me.github.io/developer-documentation/)
+This static website is automatically deploy using GitHub Pages and can be accessed [here](https://datavillage-me.github.io/developer-documentation/)
 
 ## Development
 
-This site uses [jekyll](jekyllrb.com) with the [just-the-docs template](https://github.com/just-the-docs/just-the-docs).
-
-To run it locally, make sure all the [jekyll dependencies](https://jekyllrb.com/docs/installation/) are installed on your machine.
-
-Before starting, make sure the following line in the `_config.yaml` is uncommented, if not the theme isn't recognised locally:
-
-```
-theme: just-the-docs
+This site uses [mkdocs](https://www.mkdocs.org/).
+To use mkdocs locally, first install the python dependencies :
+``` bash
+$> pip install -r requirements.txt
 ```
 
-Then run the following commands:
-
-```bash
-gem install jekyll bundler
+Then, the documentation can be served locally uising 
+``` bash
+$> mkdocs serve
 ```
 
-And then at the root project folder:
-```bash
-bundle exec jekyll serve
+or deployed online using
+``` bash
+$> mkdocs gh-deploy
 ```
 
-The website should now be accessible at [http://localhost:4000](http://localhost:4000).
+which will build then deploy the docs to the gh-pages branch of the current git repo, i.e. https://docs.datavillage.me/00-index.html

@@ -25,5 +25,5 @@ extra:
 copyright: Copyright &copy; Datavillage 2023
 
 plugins:
-  - awesome-pages:
-      order_by: filename
+  - awesome-pages
+      #order_by: filename   ## do not use this - mkdocs sorts alphanumerically by default anyway, and forcing this, causes the index.md file to be mis-sorted

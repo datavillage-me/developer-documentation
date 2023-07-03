@@ -15,13 +15,16 @@ nav:
       - Run algorithm: 20-collaboration-setup/04-algorithms.md
       - Get outputs: 20-collaboration-setup/05-outputs.md
     - Data connectors: 10-getting-started.md
-    - Algorithms: 10-getting-started.md
+    - Algorithm templates: 10-getting-started.md
     - Security & confidentiality: 10-getting-started.md
     - Services:
       - Authorization: 20-collaboration-setup/01-create-space.md
       - Logging & monitoring: 20-collaboration-setup/02-invite.md
       - Audit: 20-collaboration-setup/03-datasets.md
     - API reference: 10-getting-started.md
+    - Partners:
+      - Data providers: 20-collaboration-setup/01-create-space.md
+      - Algorithm providers: 20-collaboration-setup/02-invite.md
 
 
 theme:

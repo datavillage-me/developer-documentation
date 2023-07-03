@@ -1,30 +1,25 @@
 site_name: Documentation
 nav:
     - Home: index.md
-    - Getting started: 10-getting-started.md
-    - Setup a collaboration:
-      - Create a collaboration space: 20-collaboration-setup/01-create-space.md
-      - Invite participants: 20-collaboration-setup/02-invite.md
-      - Define datasets: 20-collaboration-setup/03-datasets.md
-      - Define algorithm: 20-collaboration-setup/04-algorithms.md
-      - Define outputs: 20-collaboration-setup/05-outputs.md
-    - Execute a collaboration:
-      - Deploy Datacages: 20-collaboration-setup/01-create-space.md
-      - Connect datasets: 20-collaboration-setup/02-invite.md
-      - Publish algorithm: 20-collaboration-setup/03-datasets.md
-      - Run algorithm: 20-collaboration-setup/04-algorithms.md
-      - Get outputs: 20-collaboration-setup/05-outputs.md
-    - Data connectors: 10-getting-started.md
-    - Algorithm templates: 10-getting-started.md
-    - Security & confidentiality: 10-getting-started.md
+    - Getting Started:
+      - What is Datavillage?: 20-getting-started/01-what-is-datavillage.md
+      - How Datavillage Works: 20-collaboration-setup/01-create-space.md
+      - Setup a Collaboration: 20-collaboration-setup/01-create-space.md
+      - Run a Collaboration: 20-collaboration-setup/01-create-space.md
+      - A Typical Datavillage Installation: 20-collaboration-setup/01-create-space.md
+      - Testing and Debugging: 20-collaboration-setup/01-create-space.md
+      
+    - Data Connectors: 10-getting-started.md
+    - Algorithm Templates: 10-getting-started.md
+    - Security & Confidentiality: 10-getting-started.md
     - Services:
       - Authorization: 20-collaboration-setup/01-create-space.md
-      - Logging & monitoring: 20-collaboration-setup/02-invite.md
+      - Logging & Monitoring: 20-collaboration-setup/02-invite.md
       - Audit: 20-collaboration-setup/03-datasets.md
     - API reference: 10-getting-started.md
     - Partners:
-      - Data providers: 20-collaboration-setup/01-create-space.md
-      - Algorithm providers: 20-collaboration-setup/02-invite.md
+      - For Data Providers: 20-collaboration-setup/01-create-space.md
+      - For Algorithm Providers: 20-collaboration-setup/02-invite.md
 
 
 theme:

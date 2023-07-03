@@ -10,8 +10,6 @@ Learn how to use Datavillage to combine data with partners and run AI algorithms
 #### Getting started with Datavillage
 Learn about Datavillage, setup and run a basic data collaboration, explore features and use cases.
 
-
-
 ## How can Datavillage help you ?
 #### Keep control over data
 Control who and how data is used within every collaboration.

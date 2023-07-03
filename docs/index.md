@@ -13,7 +13,8 @@ Learn about Datavillage, setup and run a basic data collaboration, explore featu
 
 
 ## How can Datavillage help you ?
-
+#### Setup a data collaboration
+#### Execute a data collaboration
 
 
 Datavillage enables organizations to collaborate on data with other organizations and their consumers with privacy. Organizations gain access to sensitive and personal data of other parties while confidentiality and integrity of data and algorithms are guaranteed.

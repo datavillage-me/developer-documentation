@@ -5,7 +5,6 @@ description: "Datavillage Documentation"
 ---
 
 # Datavillage Documentation
-
 Learn how to use Datavillage to combine data with partners and run AI algorithms without disclosing it.
 
 #### Getting started with Datavillage

@@ -9,7 +9,7 @@ nav:
       - Define algorithm: 20-collaboration-setup/04-algorithms.md
       - Define outputs: 20-collaboration-setup/05-outputs.md
     - Execute a collaboration:
-      - Deploy environment: 20-collaboration-setup/01-create-space.md
+      - Deploy Datacages: 20-collaboration-setup/01-create-space.md
       - Connect datasets: 20-collaboration-setup/02-invite.md
       - Publish algorithm: 20-collaboration-setup/03-datasets.md
       - Run algorithm: 20-collaboration-setup/04-algorithms.md

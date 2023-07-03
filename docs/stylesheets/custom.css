@@ -24,7 +24,6 @@
 
 }
 
- 
 
 code {
   background-color: transparent;
@@ -34,9 +33,20 @@ code {
 
 grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   grid-auto-rows: minmax(100px, auto);
+}
+
+.grid1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid3 {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 grid>card, grid>.card {
@@ -46,10 +56,10 @@ grid>card, grid>.card {
   margin: 0;
   padding: 0.8rem;
   transition: border .25s,box-shadow .25s;
+  
 }
 
-
 grid>card:hover {
-  border-color: #0000;
+  border-color: #00fffe;
   box-shadow: var(--md-shadow-z2);
 }

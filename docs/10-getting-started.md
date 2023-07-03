@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Getting started
-nav_order: 1
+description: "Datavillage Documentation - Getting started"
 ---
 # Getting started
 

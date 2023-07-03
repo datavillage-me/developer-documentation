@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Participants SDK
-nav_order: 4
 permalink: /sdk
 ---
 

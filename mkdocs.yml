@@ -1,13 +1,56 @@
-site_name: Technical Documentation
+site_name: Documentation
+nav:
+    - Home: 01-index.md
+    - Getting started: 10-getting-started.md
+    - Setup a collaboration:
+      - Create a collaboration space: 20-collaboration-setup/01-create-space.md
+      - Invite participants: 20-collaboration-setup/02-invite.md
+      - Define datasets: 20-collaboration-setup/03-datasets.md
+      - Define algorithm: 20-collaboration-setup/04-algorithms.md
+      - Define outputs: 20-collaboration-setup/05-outputs.md
+    - Execute a collaboration:
+      - Deploy environment: 20-collaboration-setup/01-create-space.md
+      - Connect datasets: 20-collaboration-setup/02-invite.md
+      - Publish algorithm: 20-collaboration-setup/03-datasets.md
+      - Run algorithm: 20-collaboration-setup/04-algorithms.md
+      - Get outputs: 20-collaboration-setup/05-outputs.md
+    - Data connectors: 10-getting-started.md
+    - Algorithms: 10-getting-started.md
+    - Security & confidentiality: 10-getting-started.md
+    - Services:
+      - Authorization: 20-collaboration-setup/01-create-space.md
+      - Logging & monitoring: 20-collaboration-setup/02-invite.md
+      - Audit: 20-collaboration-setup/03-datasets.md
+    - API reference: 10-getting-started.md
+
 
 theme:
   name: material
   favicon: assets/images/favicon.ico
-  logo: assets/images/Codename_Logo_White.svg
+  logo: assets/images/datavillage-logo-icon.png
   features:
-    - toc.integrate
+    - toc.follow
     - navigation.footer
+    - navigation.path
+    - navigation.top
   custom_dir: custom_theme/
+  palette:
+    primary: custom
+    accent: custom
+  icon:
+    admonition:
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/book
+      info: fontawesome/solid/circle-info
+      tip: fontawesome/solid/bullhorn
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/bomb
+      danger: fontawesome/solid/skull
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/quote-left
 
 use_directory_urls: false
 
@@ -15,15 +58,26 @@ extra_css:
   - stylesheets/custom.css
 
 markdown_extensions:
+  - attr_list 
+  - md_in_html
+  - admonition
+  - pymdownx.details
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
 
 extra:
   generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/datavillage-me
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/datavillage
+   
 
 copyright: Copyright &copy; Datavillage 2023
 
 plugins:
   - awesome-pages
+  - search
       #order_by: filename   ## do not use this - mkdocs sorts alphanumerically by default anyway, and forcing this, causes the index.md file to be mis-sorted

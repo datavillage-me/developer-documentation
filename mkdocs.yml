@@ -1,6 +1,6 @@
 site_name: Documentation
 nav:
-    - Home: 01-index.md
+    - Home: index.md
     - Getting started: 10-getting-started.md
     - Setup a collaboration:
       - Create a collaboration space: 20-collaboration-setup/01-create-space.md

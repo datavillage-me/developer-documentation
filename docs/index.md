@@ -7,6 +7,18 @@ description: "Datavillage Documentation"
 # Datavillage Documentation
 Learn how to use Datavillage to combine data with partners and run AI algorithms without disclosing it.
 
+<grid>
+    <card>
+    Card 1
+    </card>
+    <card>
+    Card 2</card>
+    <card>
+    Card 3
+    </card>
+</grid>
+
+
 #### Getting started with Datavillage
 Learn about Datavillage, setup and run a basic data collaboration, explore features and use cases.
 

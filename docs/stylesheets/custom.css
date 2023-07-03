@@ -26,10 +26,30 @@
 
  
 
- 
-
 code {
   background-color: transparent;
   border: none;
 }
 
+
+grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+grid>card, grid>.card {
+  border: 0.05rem solid var(--md-default-fg-color--lightest);
+  border-radius: 0.1rem;
+  display: block;
+  margin: 0;
+  padding: 0.8rem;
+  transition: border .25s,box-shadow .25s;
+}
+
+
+grid>card:hover {
+  border-color: #0000;
+  box-shadow: var(--md-shadow-z2);
+}

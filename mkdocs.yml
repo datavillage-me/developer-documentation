@@ -4,12 +4,13 @@ nav:
     - Getting Started:
       - What is Datavillage?: 20-getting-started/01-what-is-datavillage.md
       - How Datavillage Works: 20-getting-started/02-how-it-works.md
-      - Setup a Collaboration: 20-collaboration-setup/01-create-space.md
+      - Setup a Collaboration: 20-getting-started/03-create-space.md
       - Run a Collaboration: 20-collaboration-setup/01-create-space.md
-      - A Typical Datavillage Installation: 20-collaboration-setup/01-create-space.md
       - Testing and Debugging: 20-collaboration-setup/01-create-space.md
-      
-    - Data Connectors: 10-getting-started.md
+    - Data Connectors:
+      - For Enterprise Data: 20-collaboration-setup/01-create-space.md
+      - For Personal Data: 20-collaboration-setup/02-invite.md
+      - Custom API's: 20-collaboration-setup/02-invite.md
     - Algorithm Models: 10-getting-started.md
     - Security & Confidentiality: 10-getting-started.md
     - Services:

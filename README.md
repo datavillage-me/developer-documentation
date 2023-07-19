@@ -12,7 +12,7 @@ To use mkdocs locally, first install the python dependencies :
 $> pip install -r requirements.txt
 ```
 
-Then, the documentation can be served locally uising 
+Then, the documentation can be served locally using 
 ``` bash
 $> mkdocs serve
 ```

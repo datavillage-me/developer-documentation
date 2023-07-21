@@ -19,7 +19,7 @@ nav:
       - Authorization: 20-collaboration-setup/01-create-space.md
       - Logging & Monitoring: 20-collaboration-setup/02-invite.md
       - Audit: 20-collaboration-setup/03-datasets.md
-    - API reference: 10-getting-started.md
+    - API reference: api/api.md
     - Partners:
       - For Data Providers: 20-collaboration-setup/01-create-space.md
       - For Algorithm Providers: 20-collaboration-setup/02-invite.md

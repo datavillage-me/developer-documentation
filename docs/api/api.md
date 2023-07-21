@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Data Consumer API
+title: Code provider API
 parent: APIs References
-nav_order: 4
+nav_order: 3
 ---
 <head>
   <meta charset="utf-8" />
@@ -20,7 +20,7 @@ nav_order: 4
 <script>
   window.onload = () => {
     window.ui = SwaggerUIBundle({
-      url: '../generated/data-consumer.yaml',
+      url: 'https://api.datavillage.me/openapi.yaml',
       dom_id: '#swagger-ui',
     });
   };

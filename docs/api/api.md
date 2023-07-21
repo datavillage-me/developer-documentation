@@ -20,7 +20,7 @@ nav_order: 3
 <script>
   window.onload = () => {
     window.ui = SwaggerUIBundle({
-      url: 'https://api.datavillage.me/openapi.yaml',
+      url: '../generated/openapi.yaml',
       dom_id: '#swagger-ui',
     });
   };

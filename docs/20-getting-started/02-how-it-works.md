@@ -5,9 +5,11 @@ description: "How Datavillage Works"
 ---
 
 # How Datavillage Works
-In a nutshell, the collaboration owner creates a collaboration space and invites participants as data providers, algorithm providers, or data consumers. Multiple roles can be assumed by a single participant. 
+In a nutshell, the collaboration owner creates a collaboration space and invites participants as data providers, algorithm providers, or insights consumers. Multiple roles can be assumed by a single participant.
+
 Data providers connect their encrypted data via custom APIs or available data connectors, algorithm providers publish their algorithm via Dockerfile and data consumers consume the result via custom APIs, webhooks or data connectors. 
-The Datacage associated with the collaboration space handles the events (batch or real time), executes the algorithm on the decrypted data (only the algorithm can access the data in clear) and the result is made available to data consumers in an encrypted way. The Datacage verifies authorization, consent (if required from individuals) and keeps track of all data activity in an immutable audit trail.
+
+The Datacage associated with the collaboration space handles the events (batch or real time), executes the algorithm on the decrypted data (only the algorithm can access the data in clear) and the result is made available to insightsx consumers in an encrypted way. The Datacage verifies authorization, consent (if required from individuals) and keeps track of all data activity in an immutable audit trail.
 
 ## Overview
 ![Datavillage overview](../assets/images/datavillage-overview.png)
@@ -20,8 +22,8 @@ Data consumers are the organizations that get access to the decrypted result of 
 ## Sources for connecting data
 You can connect all types of data such as personal data, sensitive data or proprietary data with the guarantee that the data will never be decrypted except by the trusted algorithm associated with the collaboration space.
 
-### Connecting Big Data
-[<b>Big data connectors</b>](docs/page2.md/#heading2) are Datavillage's powerful way to connect large data sets from any data provider on any cloud provider without the need to copy and transfer all the data into the collaboration  space. Fresh data is directly accessible and used. With end-to-end encryption as well as "in-use" encryption, data is processed in encrypted memory ensuring privacy and control.
+### Connecting Enterprise Data
+[<b>Enterprise data connectors</b>](docs/page2.md/#heading2) are Datavillage's powerful way to connect large data sets from any data provider on any cloud provider without the need to copy and transfer all the data into the collaboration  space. Fresh data is directly accessible and used. With end-to-end encryption as well as "in-use" encryption, data is processed in encrypted memory ensuring privacy and control.
 ### Connecting Personal Data
 [<b>Personal data connectors</b>](docs/page2.md/#heading2) are the way Datavillage connects personal data while ensuring control and privacy for individuals. Personal data is accessible through a granular consent mechanism and are processed in encrypted memory. 
 

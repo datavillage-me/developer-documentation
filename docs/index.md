@@ -5,7 +5,7 @@ description: "Datavillage Documentation"
 ---
 
 # Datavillage Documentation
-Learn how to use Datavillage to combine data with partners and run AI algorithms without disclosing it.
+Learn how to use Datavillage to combine data with partners and apply AI algorithms without disclosing sensitive information.
 
 
 <grid class="grid1">
@@ -55,8 +55,5 @@ The data collaboration platform helps you define and connect data with algorithm
     </card>
 </grid>
 
-## Additional ressources
-#### Totally new to data collaboration?
-Check-out our <b><a href="https://www.datavillage.me/knowledge" target="_blank">Knowledge base</a></b> and learn more about data collaboration, privacy enhancement technologies and the new data economy.
-#### Want more hands-on guidance?
+## Want more hands-on guidance?
 Book a <b><a href="https://www.datavillage.me/contactdemo" target="_blank">Demo</a></b> and get 2 hours of data valorization for free.

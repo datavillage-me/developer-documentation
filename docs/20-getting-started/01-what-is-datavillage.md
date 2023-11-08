@@ -13,10 +13,12 @@ Datavillage simplifies the governance of data collaboration and algorithm execut
 
 You can use Datavillage
 <ul>
-<li>to set up secure multi-party data collaborations in a transparent governance</li>
-<li>to train and run AI algorithms without losing control and confidentiality of your data</li>
-<li>to process the personal data of 3rd parties combined with yours in a privacy-preserving way</li>
+<li>to enable <b>Secure Data Sharing</b> by aggregating and correlating datasets, apply anonymization, pseudonymization or minimization in confidential environments </li>
+<li>to train and run AI algorithms without losing control and confidentiality of your data and models - also called <b>Confidential AI</b></li>
+<li>to set up secure multi-party data collaborations in a transparent governance and perform <b>Collaborative Analytics</b></li>
+
+<li>to provide <b>Personalisation with Privacy</b> and process personal data of 3rd parties combined with yours in a privacy-preserving way</li>
 </ul>
 
-When collaborating on Datavillage, you can integrate your data governance, connect any data sources data, publish and run algorithms with your prefered tools to get new insights (derived data) with trust, transparency and confidentiality.
+When you collaborate on Datavillage, you can integrate your data governance, connect all data sources, publish and run algorithms with your favorite tools to gain new insights (derived data) with confidentiality, transparency, and trust but always verify.
 

@@ -4,25 +4,25 @@ nav:
     - Getting Started:
       - What is Datavillage?: 20-getting-started/01-what-is-datavillage.md
       - How Datavillage Works: 20-getting-started/02-how-it-works.md
-    - Using the platform:
-        - Getting Started: Howto/10-using-platform.md
-        - Setup a Collaboration: Howto/20-creating-space.md
-        - Add Inputs: Howto/30-add-input-data.md
-        - Configure Algorithm: Howto/40-configure-algorithm.md
-    - Data Connectors:
-      - For Enterprise Data: 20-collaboration-setup/01-create-space.md
-      - For Personal Data: 20-collaboration-setup/02-invite.md
-      - Custom API's: 20-collaboration-setup/02-invite.md
-    - Algorithm Models: 10-getting-started.md
-    - Security & Confidentiality: 10-getting-started.md
-    - Services:
-      - Authorization: 20-collaboration-setup/01-create-space.md
-      - Logging & Monitoring: 20-collaboration-setup/02-invite.md
-      - Audit: 20-collaboration-setup/03-datasets.md
+ #   - Using the platform:
+ #       - Getting Started: Howto/10-using-platform.md
+ #       - Setup a Collaboration: Howto/20-creating-space.md
+ #       - Add Inputs: Howto/30-add-input-data.md
+ #       - Configure Algorithm: Howto/40-configure-algorithm.md
+ #   - Data Connectors:
+ #     - For Enterprise Data: 20-collaboration-setup/01-create-space.md
+ #     - For Personal Data: 20-collaboration-setup/02-invite.md
+ #     - Custom API's: 20-collaboration-setup/02-invite.md
+ #   - Algorithm Models: 10-getting-started.md
+ #   - Security & Confidentiality: 10-getting-started.md
+ #   - Services:
+ #     - Authorization: 20-collaboration-setup/01-create-space.md
+ #     - Logging & Monitoring: 20-collaboration-setup/02-invite.md
+ #     - Audit: 20-collaboration-setup/03-datasets.md
     - API reference: api/api.md
-    - Partners:
-      - For Data Providers: 20-collaboration-setup/01-create-space.md
-      - For Algorithm Providers: 20-collaboration-setup/02-invite.md
+  #  - Partners:
+  #    - For Data Providers: 20-collaboration-setup/01-create-space.md
+  #    - For Algorithm Providers: 20-collaboration-setup/02-invite.md
 
 
 theme:

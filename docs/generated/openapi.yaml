@@ -644,6 +644,51 @@ paths:
         required: true
         content:
           application/json: {}
+  "/collaborationSpaces/{spaceId}/metrics":
+    get:
+      summary: Get cage metrics
+      description: >
+        Get the metrics that have been posted as a result of running the cage
+        algorithm
+
+
+        **Required roles** : space owner manager
+      tags:
+        - spaces
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+    post:
+      summary: Add metric data
+      description: |
+        Add a metric entry to the metrics list of this collaboration space
+
+        **Required roles** : space owner manager
+      tags:
+        - spaces
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json: {}
   "/collaborationSpaces/{spaceId}/collaborators/{clientId}":
     get:
       summary: Get Space Collaborator
@@ -1975,6 +2020,27 @@ paths:
           required: true
           schema:
             type: string
+  /datasets:
+    get:
+      summary: Get datasets you have access to
+    post:
+      summary: Create a new dataset
+  "/dataset/{datasetId}":
+    get:
+      summary: Get dataset
+    delete:
+      summary: Delete a dataset
+    patch:
+      summary: Update a dataset
+  "/dataset/{datasetId}/version":
+    post:
+      summary: Create a new version for a dataset
+  "/dataset/{datasetId}/versions/{versionId}/finalize":
+    post:
+      summary: Finalize a version of a dataset
+  "/dataset/{datasetId}/versions/{versionId}/deprecate":
+    post:
+      summary: Deprecate a version of a dataset
 servers:
   - url: https://api.datavillage.me
 components:

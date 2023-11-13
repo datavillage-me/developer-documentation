@@ -57,3 +57,7 @@ The data collaboration platform helps you define and connect data with algorithm
 
 ## Want more hands-on guidance?
 Book a <b><a href="https://www.datavillage.me/contactdemo" target="_blank">Demo</a></b> and get 2 hours of data valorization for free.
+
+ <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/26682333.js"></script>
+  <!-- End of HubSpot Embed Code -->

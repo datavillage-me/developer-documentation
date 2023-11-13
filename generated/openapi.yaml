@@ -1,0 +1,2061 @@
+info:
+  title: Datavillage Platform API
+  contact: {}
+openapi: 3.0.0
+security:
+  - BearerAuth: []
+paths:
+  /activities:
+    get:
+      summary: Get Activities
+      description: |
+        Query the activity log
+
+        *Roles required* : admin | user
+      tags:
+        - activity
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json: {}
+      parameters:
+        - in: query
+          name: userId
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: type
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: before
+          required: false
+          schema:
+            format: double
+            type: number
+        - in: query
+          name: after
+          required: false
+          schema:
+            format: double
+            type: number
+        - in: query
+          name: level
+          required: false
+          schema:
+            format: double
+            type: number
+        - in: query
+          name: consentId
+          required: false
+          schema:
+            type: string
+  /auth/currentCredentials:
+    get:
+      summary: Get Current Credentials
+      description: >
+        Returns the roles and credentials corresponding to the provided
+        authentication tokens
+      tags:
+        - auth
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters: []
+  /auth/me:
+    get:
+      summary: Get Current User
+      description: |
+        Return the current user profile
+
+        *Roles required* : user
+      tags:
+        - auth
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters: []
+  /auth/dev/me:
+    get:
+      summary: Get Current Developer
+      description: |
+        Return the current developer profile      
+
+        *Roles required* : admin | user
+      tags:
+        - auth
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters: []
+  /auth/login:
+    get:
+      summary: Perform a login
+      tags:
+        - auth
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: query
+          name: redirectUrl
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: force
+          required: false
+          schema:
+            type: boolean
+  /auth/logout:
+    summary: Log out
+    description: |
+      Logs out and remove the current authentication tokens
+    post:
+      tags:
+        - auth
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters: []
+  /auth/dev/logout:
+    summary: Log out
+    description: |
+      Logs out and remove the current authentication tokens
+    post:
+      tags:
+        - auth
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters: []
+  /auth/createToken:
+    summary: Create an Auth token
+    description: |
+      Create an Auth token with a given scope for the given user
+      This is only available in a development environment
+
+      **Required roles** : admin | user
+    post:
+      tags:
+        - auth
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                scope:
+                  type: string
+                devId:
+                  type: string
+                userId:
+                  type: string
+              required:
+                - scope
+                - devId
+                - userId
+              type: object
+  /clients:
+    get:
+      summary: Get All Clients
+      description: |
+        Create an Auth token with a given scope for the given user
+
+        **Required roles** : admin | developer
+      tags:
+        - clients
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters: []
+    post:
+      summary: Create Client
+      description: |
+        Create a client
+
+        **Required roles** : admin
+      tags:
+        - clients
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json: {}
+  "/clients/{clientId}":
+    get:
+      summary: Get Client
+      description: |
+        Retrieve a client definition
+
+        **Required roles** : admin | developer
+      tags:
+        - clients
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: clientId
+          required: true
+          schema:
+            type: string
+    patch:
+      summary: Update Client
+      description: |
+        Update a client settings
+
+        **Required roles** : client manager
+      tags:
+        - clients
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: clientId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json: {}
+    delete:
+      summary: Delete Client
+      description: |
+        Delete a client
+
+        **Required roles** : admin
+      tags:
+        - clients
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: clientId
+          required: true
+          schema:
+            type: string
+  "/clients/{clientId}/spaces/{spaceId}/activeUsers":
+    get:
+      summary: Get Active Users
+      description: |
+        Get all registered users for this collaboration space.
+
+        **Required roles** : client manager
+      tags:
+        - clients
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: clientId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+  "/clients/{clientId}/spaces/{spaceId}/activeUsers/{userId}/data":
+    get:
+      summary: Get User Data
+      description: |
+        Get algorithm data for a given user
+
+        **Required roles** : user, cage
+      tags:
+        - clients
+      responses:
+        "200":
+          description: Ok
+          content:
+            text/turtle: {}
+      parameters:
+        - in: path
+          name: clientId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+  "/clients/{clientId}/spaces/{spaceId}/activeUsers/{userId}/inferences":
+    get:
+      summary: Get User Results
+      description: |
+        Get algorithm results for a given user
+
+        **Required roles** : user
+      tags:
+        - clients
+      responses:
+        "200":
+          description: Ok
+          content:
+            text/turtle: {}
+      parameters:
+        - in: path
+          name: clientId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+    put:
+      summary: Put User Results
+      description: |
+        Save algorithm results for a given user
+
+        **Required roles** : cage
+      tags:
+        - clients
+      responses:
+        "200":
+          description: Ok
+          content:
+            text/turtle: {}
+      parameters:
+        - in: path
+          name: clientId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          text/turtle: {}
+        required: true
+  "/clients/{clientId}/spaces/{spaceId}/activeUsers/{userId}/explains":
+    get:
+      summary: Get User Results (explains)
+      description: |
+        Get algorithm results for a given user
+
+        **Required roles** : user
+      tags:
+        - clients
+      responses:
+        "200":
+          description: Ok
+          content:
+            text/turtle: {}
+      parameters:
+        - in: path
+          name: clientId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+    put:
+      summary: Put User Results (explains)
+      description: |
+        Save algorithm results for a given user
+
+        **Required roles** : cage
+      tags:
+        - clients
+      responses:
+        "200":
+          description: Ok
+          content:
+            text/turtle: {}
+      parameters:
+        - in: path
+          name: clientId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          text/turtle: {}
+        required: true
+  "/clients/{clientId}/spaces/{spaceId}/currentConsentReceipt":
+    get:
+      summary: Get Consent Receipt
+      description: |
+        Get the current consent receipt of a collaboration space
+
+        **Required roles** : none
+      tags:
+        - clients
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: clientId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+  "/clients/{clientId}/spaces/{spaceId}/consentReceipts":
+    post:
+      summary: Update Consent Receipt
+      description: |
+        Update the current consent receipt of a collaboration space
+
+        **Required roles** : client manager
+      tags:
+        - clients
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: clientId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json: {}
+  /collaborationSpaces:
+    get:
+      summary: Get Collaboration Spaces
+      description: |
+        Get all collaboration spaces.
+
+        **Required roles** : space owner manager
+      tags:
+        - spaces
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters: []
+    post:
+      summary: Create Collaboration Space
+      description: |
+        Create a new collaboration space.
+
+        **Required roles** : client manager
+      tags:
+        - spaces
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json: {}
+  "/collaborationSpaces/{spaceId}":
+    get:
+      summary: Get Collaboration Space
+      description: |
+        Retrieve a collaboration space definition.
+
+        **Required roles** : client manager
+      tags:
+        - spaces
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+    patch:
+      summary: Update Collaboration Space
+      description: |
+        Update a collaboration space settings.
+
+        **Required roles** : client manager
+      tags:
+        - spaces
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json: {}
+    delete:
+      summary: Delete Collaboration Space
+      description: |
+        Delete a collaboration space.
+
+        **Required roles** : client manager
+      tags:
+        - spaces
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+  "/collaborationSpaces/{spaceId}/collaborators":
+    get:
+      summary: List Space Collaborators
+      description: |
+        Get the list of collaborators in a collaboration space.
+
+        **Required roles** : space owner manager
+      tags:
+        - spaces
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+    post:
+      summary: Add Space Collaborator
+      description: |
+        Add a collaborator to a collaboration space.
+
+        **Required roles** : space owner manager
+      tags:
+        - spaces
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json: {}
+  "/collaborationSpaces/{spaceId}/metrics":
+    get:
+      summary: Get cage metrics
+      description: >
+        Get the metrics that have been posted as a result of running the cage
+        algorithm
+
+
+        **Required roles** : space owner manager
+      tags:
+        - spaces
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+    post:
+      summary: Add metric data
+      description: |
+        Add a metric entry to the metrics list of this collaboration space
+
+        **Required roles** : space owner manager
+      tags:
+        - spaces
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json: {}
+  "/collaborationSpaces/{spaceId}/collaborators/{clientId}":
+    get:
+      summary: Get Space Collaborator
+      description: |
+        Get a collaborator definition in a collaboration space.
+
+        **Required roles** : space owner manager, collaborator
+      tags:
+        - spaces
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: clientId
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: role
+          required: true
+          schema:
+            type: string
+    patch:
+      summary: Update Space Collaborator
+      description: |
+        Update a collaborator settings in a collaboration space.
+
+        **Required roles** : collaborator
+      tags:
+        - spaces
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: clientId
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: role
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json: {}
+  "/collaborationSpaces/{spaceId}/collaborators/{clientId}/invite":
+    patch:
+      summary: Update Collaboration Invite
+      description: |
+        Update an invitation in a collaboration space.
+
+        **Required roles** : collaborator
+      tags:
+        - spaces
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: clientId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json: {}
+  "/collaborationSpaces/{spaceId}/collaborators/{clientId}/dataDescriptors":
+    post:
+      summary: Add Data Descriptor
+      description: |
+        Add a DataDescriptor for a collaborator in a collaboration space.
+
+        **Required roles** : collaborator
+      tags:
+        - spaces
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: clientId
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: role
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json: {}
+  "/collaborationSpaces/{spaceId}/collaborators/{clientId}/dataDescriptors/{dataDescriptorId}":
+    patch:
+      summary: Update Data Descriptor
+      description: |
+        Update a DataDescriptor for a collaborator in a collaboration space.
+
+        **Required roles** : collaborator
+      tags:
+        - spaces
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: clientId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: dataDescriptorId
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: role
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json: {}
+    delete:
+      summary: Delete Data Descriptor
+      description: |
+        Delete a DataDescriptor for a collaborator in a collaboration space.
+
+        **Required roles** : collaborator
+      tags:
+        - spaces
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: clientId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: dataDescriptorId
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: role
+          required: true
+          schema:
+            type: string
+  "/collaborationSpaces/{spaceId}/collaborators/{clientId}/individuals":
+    post:
+      summary: Add Individuals
+      description: |
+        Add an Individuals descriptor in a collaboration space.
+
+        **Required roles** : collaborator
+      tags:
+        - spaces
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: clientId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json: {}
+    patch:
+      summary: Update Individuals Settings
+      description: |
+        Update Individuals settings in a collaboration space.
+
+        **Required roles** : collaborator
+      tags:
+        - spaces
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: clientId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json: {}
+  "/collaborationSpaces/{spaceId}/collaborators/{clientId}/individuals/{individualsDescriptorId}":
+    patch:
+      summary: Update Individuals Descriptor
+      description: |
+        Update Individuals descriptor in a collaboration space.
+
+        **Required roles** : collaborator
+      tags:
+        - spaces
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: clientId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: individualsDescriptorId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json: {}
+    delete:
+      summary: Delete Individuals
+      description: |
+        Delete an Individuals descriptor in a collaboration space.
+
+        **Required roles** : collaborator
+      tags:
+        - spaces
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: clientId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: individualsDescriptorId
+          required: true
+          schema:
+            type: string
+  "/collaborationSpaces/{spaceId}/operator/loki/{path}":
+    get:
+      summary: Proxy to Loki logs
+      description: Access Loki APIs for this collaboration space
+      tags:
+        - cage
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json: {}
+  "/collaborationSpaces/{spaceId}/operator/logs/pod_status":
+    get:
+      summary: Cage Status
+      description: Get the status of the pods running in the app datacage
+      tags:
+        - cage
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json: {}
+  "/collaborationSpaces/{spaceId}/operator/logs/algo":
+    get:
+      summary: Cage Logs Algo
+      description: Get the logs of the algorithm running in the app datacage
+      tags:
+        - cage
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - required: false
+          schema:
+            title: Tail Lines
+            type: integer
+            default: 100
+          name: tail_lines
+          in: query
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json: {}
+  "/collaborationSpaces/{spaceId}/operator/logs/deployment":
+    get:
+      summary: Cage Logs Deployment
+      description: Get the logs of the deployment
+      tags:
+        - cage
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - required: false
+          schema:
+            title: Tail Lines
+            type: integer
+            default: 100
+          name: tail_lines
+          in: query
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json: {}
+  "/collaborationSpaces/{spaceId}/operator/logs/states":
+    get:
+      summary: Cage Logs States
+      description: Get the logs of the deployment states
+      tags:
+        - cage
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - required: false
+          schema:
+            title: Tail Lines
+            type: integer
+            default: 100
+          name: tail_lines
+          in: query
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json: {}
+  "/collaborationSpaces/{spaceId}/operator/delete":
+    delete:
+      summary: Cage Delete
+      description: Destroy the app datacage.  The response is a stream of json objects.
+      tags:
+        - cage
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - required: false
+          schema:
+            title: Keep Vm
+            type: boolean
+            default: true
+          name: keep_vm
+          in: query
+        - required: false
+          schema:
+            title: Keep Data
+            type: boolean
+            default: true
+          name: keep_data
+          in: query
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json: {}
+  "/collaborationSpaces/{spaceId}/operator/deploy":
+    post:
+      summary: Cage Deploy
+      description: Deploy an app datacage.  The response is a stream of json objects.
+      tags:
+        - cage
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json: {}
+        required: true
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json: {}
+  "/collaborationSpaces/{spaceId}/operator/rollout":
+    post:
+      summary: Cage Rollout
+      description: Rollout an app datacage.  The response is a stream of json objects.
+      tags:
+        - cage
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json: {}
+  "/collaborationSpaces/{spaceId}/cage/attestation_SGX":
+    get:
+      summary: Attestation Sgx
+      description: Get the sgx attestation
+      tags:
+        - cage
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - required: true
+          schema:
+            title: User Report
+            type: string
+          name: user_report
+          in: query
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  "/collaborationSpaces/{spaceId}/cage/attestation_SEV":
+    get:
+      summary: Attestation Sev
+      description: Get the sev attestation
+      tags:
+        - cage
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  "/collaborationSpaces/{spaceId}/cage/resources/data/":
+    get:
+      summary: List Data
+      description: List available data files
+      tags:
+        - cage
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  "/collaborationSpaces/{spaceId}/cage/resources/data":
+    post:
+      summary: Upload Data
+      description: Upload a data file to the cage
+      tags:
+        - cage
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema: {}
+        required: true
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  "/collaborationSpaces/{spaceId}/cage/resources/data/{filename}":
+    put:
+      summary: Upload Data Stream
+      description: Upload a data file to the cage from request content
+      tags:
+        - cage
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - required: true
+          schema:
+            title: Filename
+            type: string
+          name: filename
+          in: path
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  "/collaborationSpaces/{spaceId}/cage/resources/outputs/":
+    get:
+      summary: List Output
+      description: List available output files
+      tags:
+        - cage
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  "/collaborationSpaces/{spaceId}/cage/resources/output/{filename}":
+    get:
+      summary: Download Output
+      description: Download an output form the cage
+      tags:
+        - cage
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - required: true
+          schema:
+            title: Filename
+            type: string
+          name: filename
+          in: path
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  "/collaborationSpaces/{spaceId}/cage/event":
+    get:
+      summary: Get Event
+      description: Read an event from the redis stream of the datacage (for debugging
+        purpose).
+      tags:
+        - cage
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - required: false
+          schema:
+            title: Stream Name
+            default: events
+          name: stream_name
+          in: query
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Event Event Get
+                type: array
+                items:
+                  type: object
+    post:
+      summary: Post Event
+      description: Post an event at destination of the app algorithm on the redis
+        stream of the datacage.
+      tags:
+        - cage
+      parameters:
+        - in: path
+          name: spaceId
+          required: true
+          schema:
+            type: string
+        - required: false
+          schema:
+            title: Stream Name
+            default: events
+          name: stream_name
+          in: query
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+        required: true
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Post Event Event Post
+                type: string
+  /consents:
+    get:
+      summary: List Consents
+      description: |
+        List all consents from users in a collaboration space.
+
+        **Required roles** : space owner admin
+      tags:
+        - consents
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters: []
+    post:
+      summary: Add Consent
+      description: |
+        Add consent for a user in a collaboration space.
+
+        **Required roles** : user
+      tags:
+        - consents
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json: {}
+  "/consents/{consentId}":
+    get:
+      summary: Get Consent Details
+      description: |
+        Get consent details.
+
+        **Required roles** : space owner admin, user
+      tags:
+        - consents
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: consentId
+          required: true
+          schema:
+            type: string
+  /consents/withdraw:
+    post:
+      summary: Withdraw Consent
+      description: |
+        Withdraw consent that has been given.
+
+        **Required roles** : user
+      tags:
+        - consents
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json: {}
+  "/consentReceipts/{consentReceiptId}":
+    get:
+      summary: Get ConsentReceipt
+      description: |
+        Get consent receipt for a collaboration space.
+
+        **Required roles** : space owner admin | user
+      tags:
+        - consentReceipts
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: consentReceiptId
+          required: true
+          schema:
+            type: string
+  /developers:
+    get:
+      summary: List All Developers
+      description: |
+        List all developers on the platform.
+
+        **Required roles** : admin
+      tags:
+        - developers
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters: []
+    post:
+      summary: Add Developer
+      description: |
+        Add a developer to the platform.
+
+        **Required roles** : admin
+      tags:
+        - developers
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json: {}
+  "/developers/{developerId}":
+    get:
+      summary: Get Developer Details
+      description: |
+        Get a developer profile.
+
+        **Required roles** : admin
+      tags:
+        - developers
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: developerId
+          required: true
+          schema:
+            type: string
+    delete:
+      summary: Delete Developer
+      description: |
+        Remove a developer from the platform.
+
+        **Required roles** : admin
+      tags:
+        - developers
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: developerId
+          required: true
+          schema:
+            type: string
+  "/developers/{developerId}/spaces":
+    get:
+      summary: List Developer Spaces
+      description: |
+        Get the list of collaboration spaces that a developer has access to
+
+        **Required roles** : *developer*
+      tags:
+        - developers
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: developerId
+          required: true
+          schema:
+            type: string
+  "/developers/{developerId}/roles":
+    get:
+      summary: List Developer Roles
+      description: |
+        Get the list of collaboration spaces that a developer has access to
+
+        **Required roles** : *developer*
+      tags:
+        - developers
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: developerId
+          required: true
+          schema:
+            type: string
+  /users:
+    get:
+      summary: List Users
+      description: |
+        Get the list of individual users regsitered on the platform
+
+        **Required roles** : admin
+      tags:
+        - users
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters: []
+    post:
+      summary: Add User
+      description: |
+        Register a user on the platform
+
+        **Required roles** : admin
+      tags:
+        - users
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json: {}
+  /users/applications:
+    get:
+      summary: List Applications
+      description: |
+        Get the list of applications
+
+        **Required roles** : -
+      tags:
+        - users
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters: []
+  "/users/{userId}":
+    get:
+      summary: Get User Details
+      description: |
+        Retrieve a user details
+
+        **Required roles** : user
+      tags:
+        - users
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+    delete:
+      summary: Delete User
+      description: |
+        Remove a user from the platform
+
+        **Required roles** : user
+      tags:
+        - users
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+  "/users/{userId}/checkIntegrity":
+    post:
+      summary: User Sanity CHeck
+      description: |
+        Checks the validity of a user profile (keypair, pod a ccess token)
+
+        **Required roles** : user
+      tags:
+        - users
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: fix
+          required: false
+          schema:
+            type: boolean
+      requestBody:
+        required: true
+        content:
+          application/json: {}
+  "/users/{userId}/applications":
+    get:
+      summary: List User Applications
+      description: |
+        List the application a user has consented to
+
+        **Required roles** : user
+      tags:
+        - users
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+  "/users/{userId}/pods":
+    get:
+      summary: List User Pods
+      description: |
+        List the pods registered by a user
+
+        **Required roles** : user
+      tags:
+        - users
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+    post:
+      summary: Add User Pod
+      description: |
+        Register a pod for a user
+
+        **Required roles** : user
+      tags:
+        - users
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json: {}
+  "/users/{userId}/pods/{podId}":
+    get:
+      summary: Get User Pod
+      description: |
+        Retrieve the details of a user's pod
+
+        **Required roles** : user
+      tags:
+        - users
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: podId
+          required: true
+          schema:
+            type: string
+  "/users/{userId}/pods/{podId}/resources/{path}":
+    get:
+      summary: Get Pod Resource
+      description: |
+        Read a resource in a user's pod
+
+        **Required roles** : user
+      tags:
+        - users
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: podId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: path
+          required: false
+          schema:
+            type: string
+            format: path
+    head:
+      summary: Get Pod Resource Metadata
+      description: |
+        Read a resource metadata in a user's pod
+
+        **Required roles** : user
+      tags:
+        - users
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: podId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: path
+          required: false
+          schema:
+            type: string
+            format: path
+    put:
+      summary: Write Pod Resource
+      description: |
+        Write a resource in a user's pod
+
+        **Required roles** : user
+      tags:
+        - users
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: podId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: path
+          required: false
+          schema:
+            type: string
+            format: path
+      requestBody:
+        content:
+          "*/*": {}
+    post:
+      summary: Append to Pod Resource
+      description: |
+        Append content to a resource in a user's pod
+
+        **Required roles** : user
+      tags:
+        - users
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: podId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: path
+          required: false
+          schema:
+            type: string
+            format: path
+      requestBody:
+        content:
+          "*/*": {}
+    delete:
+      summary: Delete Pod Resource
+      description: |
+        Delete a resource from a user's pod
+
+        **Required roles** : user
+      tags:
+        - users
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: podId
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: path
+          required: false
+          schema:
+            type: string
+            format: path
+  /sources/providers:
+    get:
+      summary: List Data Providers
+      description: |
+        List the data providers available on the platform
+
+        **Required roles** : -
+      tags:
+        - providers
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters: []
+  /sources/importData:
+    post:
+      summary: Import Data
+      description: |
+        Start an import task for a data provider
+
+        **Required roles** : admin
+      tags:
+        - providers
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json: {}
+  /sources/startImportJob:
+    post:
+      summary: Schedule Import Job
+      description: |
+        Schedule an import job
+
+        **Required roles** : admin
+      tags:
+        - providers
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json: {}
+  /jobs:
+    get:
+      summary: List jobs
+      description: |
+        List scheduled jobs
+
+        **Required roles** : admin
+      tags:
+        - providers
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters: []
+  "/jobs/{jobId}":
+    get:
+      summary: Get Job Details
+      description: |
+        Retrieve the details of a job
+
+        **Required roles** : admin
+      tags:
+        - providers
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json: {}
+      parameters:
+        - in: path
+          name: jobId
+          required: true
+          schema:
+            type: string
+  /datasets:
+    get:
+      summary: Get datasets you have access to
+    post:
+      summary: Create a new dataset
+  "/dataset/{datasetId}":
+    get:
+      summary: Get dataset
+    delete:
+      summary: Delete a dataset
+    patch:
+      summary: Update a dataset
+  "/dataset/{datasetId}/version":
+    post:
+      summary: Create a new version for a dataset
+  "/dataset/{datasetId}/versions/{versionId}/finalize":
+    post:
+      summary: Finalize a version of a dataset
+  "/dataset/{datasetId}/versions/{versionId}/deprecate":
+    post:
+      summary: Deprecate a version of a dataset
+servers:
+  - url: https://api.datavillage.me
+components:
+  examples: {}
+  headers: {}
+  parameters: {}
+  requestBodies: {}
+  responses: {}
+  schemas: {}
+  securitySchemes:
+    BearerAuth:
+      scheme: bearer
+      type: http
+      bearerFormat: JWT
+    IdTokenAuth:
+      type: apiKey
+      in: header
+      name: idToken

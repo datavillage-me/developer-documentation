@@ -1,0 +1,65 @@
+
+
+
+:root {
+
+  --md-primary-fg-color:             #132240;
+  --md-primary-fg-color--light:        red;
+  --md-primary-fg-color--dark:        red;
+  --md-primary-bg-color:              #00ffff;
+  --md-primary-bg-color--light:       #00ffff;
+
+
+
+  --md-accent-fg-color:                #00fffe;
+  --md-accent-fg-color--transparent:   #132240;
+  --md-accent-bg-color:                #132240;
+  --md-accent-bg-color--light:       #132240;
+
+  --md-footer-fg-color:                #00fffe;
+  --md-footer-fg-color--light:        #00fffe;
+  --md-footer-fg-color--lighter:       #132240;
+  --md-footer-bg-color:                 #132240;
+  --md-footer-bg-color--dark:          #132240;
+
+}
+
+
+code {
+  background-color: transparent;
+  border: none;
+}
+
+
+grid {
+  display: grid;
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.grid1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+grid>card, grid>.card {
+  border: 0.05rem solid var(--md-default-fg-color--lightest);
+  border-radius: 0.1rem;
+  display: block;
+  margin: 0;
+  padding: 0.8rem;
+  transition: border .25s,box-shadow .25s;
+  
+}
+
+grid>card:hover {
+  border-color: #00ffff;
+  box-shadow: var(--md-shadow-z2);
+}
